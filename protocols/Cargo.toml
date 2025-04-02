@@ -1,0 +1,32 @@
+[package]
+name = "protocols"
+version = "0.1.0"
+edition = "2018"
+description = "Cryptographic protocols for linear, ReLU, and quadratic activations"
+keywords = ["cryptography", "finite fields", "garbled circuits", "secret sharing", "neural networks"]
+categories = ["cryptography", "machine learning"]
+include = ["Cargo.toml", "src"]
+
+
+[dependencies]
+num-traits = { version = "0.2.6"}
+utils = { path = "../utils" }
+arithmetic = { path = "../arithmetic" }
+protocols-sys = { path = "../protocols-sys" }
+ndarray = { version = "0.15.4", features = [ "serde-1" ] }
+primitives = { path = "../primitives" }
+ocelot = { version = "0.3", git = "https://github.com/GaloisInc/ocelot/" }
+scuttlebutt = { version = "0.3", git = "https://github.com/GaloisInc/scuttlebutt/", features = [ "serde" ], tag = "0.3.2" }
+rayon = { version = "1" }
+network = { path = "../network" }
+rand = { version = "0.6" }
+bincode = "1.0"
+serde = "1.0"
+crossbeam = "0.7.1"
+io-utils = { git = "https://github.com/ryanleh/io-utils", branch = "main" }
+
+[dev-dependencies]
+rand_chacha = { version = "0.1.1" }
+
+[features]
+timer = ["utils/timer"]

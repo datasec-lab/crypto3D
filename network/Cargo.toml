@@ -1,0 +1,26 @@
+[package]
+name = "network"
+version = "0.1.0"
+edition = "2018"
+description = "A library for convolutional neural networks"
+keywords = ["cryptography", "finite fields", "machine learning", "neural networks"]
+categories = ["cryptography", "machine learning"]
+include = ["Cargo.toml", "src"]
+
+
+[dependencies]
+arithmetic = { path = "../arithmetic" }
+primitives = { path = "../primitives" }
+serde = { version = "1", features = [ "derive" ] }
+ndarray = { version = "0.15.4", features = [ "serde-1" ] }
+rand = { version = "0.6" }
+npy = { version = "0.4" } 
+npy-derive = { version = "0.4" }
+
+num-traits = { version = "0.2" }
+tch = { version = "0.4.1" }
+
+[dev-dependencies]
+blake2 = "0.9"
+criterion = "0.2"
+rand_chacha = "0.1.1"

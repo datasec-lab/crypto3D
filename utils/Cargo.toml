@@ -1,0 +1,13 @@
+[package]
+name = "utils"
+version = "0.1.0"
+edition = "2018"
+description = "Utilities for benchmarking"
+categories = ["cryptography"]
+include = ["Cargo.toml", "src"]
+
+[dependencies]
+colored = { version = "1", optional = true }
+
+[features]
+timer = [ "colored" ]

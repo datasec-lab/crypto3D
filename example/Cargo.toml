@@ -1,0 +1,42 @@
+[package]
+name = "example"
+version = "0.1.0"
+edition = "2018"
+keywords = ["cryptography", "finite fields", "garbled circuits", "secret sharing"]
+categories = ["cryptography"]
+include = ["Cargo.toml", "src"]
+
+
+[dependencies]
+arithmetic = { path = "../arithmetic" }
+utils = { path = "../utils" }
+primitives = { path = "../primitives" }
+network = { path = "../network" }
+protocols = { path = "../protocols" }
+protocols-sys = { path = "../protocols-sys" }
+num-traits = { version = "0.2" }
+rand = { version = "0.6" }
+rand_chacha = { version = "0.1.1" }
+crossbeam = "0.7.1"
+#tch = { version = "0.1.3" }
+tch = { version = "0.4.1" }
+rayon = {version = "1.0"}
+num_cpus = { version = "1.11.1" }
+clap = "2.33.3"
+ocelot = { version = "0.3", git = "https://github.com/GaloisInc/ocelot/" }
+scuttlebutt = { version = "0.3", git = "https://github.com/GaloisInc/scuttlebutt/", features = [ "serde" ], tag = "0.3.2" }
+
+io-utils = { git = "https://github.com/ryanleh/io-utils", branch = "main" }
+
+[lib]
+name = "example"
+path = "src/lib.rs"
+
+[[bin]]
+name = "inference"
+path = "src/inference/c3d/inference.rs"
+
+
+[features]
+default = [ "timer" ]
+timer = [ "protocols/timer" ]
